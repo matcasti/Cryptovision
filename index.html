@@ -215,7 +215,9 @@
           <div class="chart-overlay-vals" id="chart-legend"></div>
         </div>
         <div class="chart-panel" style="padding:14px">
-          <canvas id="price-chart" height="260"></canvas>
+          <div class="chart-wrap chart-wrap-lg">
+            <canvas id="price-chart"></canvas>
+          </div>
         </div>
       </div>
 
@@ -223,7 +225,9 @@
       <div class="card" id="vol-panel">
         <div class="card-header"><span class="card-title">Volume</span></div>
         <div class="chart-panel" style="padding:14px">
-          <canvas id="vol-chart" height="80"></canvas>
+          <div class="chart-wrap chart-wrap-sm">
+            <canvas id="vol-chart"></canvas>
+          </div>
         </div>
       </div>
 
@@ -234,7 +238,9 @@
           <span style="font-family:var(--mono);font-size:10px;color:var(--text3)">Overbought: 70 | Oversold: 30</span>
         </div>
         <div class="chart-panel" style="padding:14px">
-          <canvas id="rsi-chart" height="80"></canvas>
+          <div class="chart-wrap chart-wrap-sm">
+            <canvas id="rsi-chart"></canvas>
+          </div>
         </div>
       </div>
 
@@ -244,7 +250,9 @@
           <span class="card-title">MACD (12,26,9)</span>
         </div>
         <div class="chart-panel" style="padding:14px">
-          <canvas id="macd-chart" height="80"></canvas>
+          <div class="chart-wrap chart-wrap-sm">
+            <canvas id="macd-chart"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -301,7 +309,9 @@
     <div class="card">
       <div class="card-header"><span class="card-title">Price Projection (30d history + 7d forecast)</span></div>
       <div style="padding:14px">
-        <canvas id="regression-chart" height="180"></canvas>
+        <div class="chart-wrap chart-wrap-md">
+          <canvas id="regression-chart"></canvas>
+        </div>
       </div>
     </div>
 
@@ -441,7 +451,9 @@
     <div class="card">
       <div class="card-header"><span class="card-title">P&L per Coin</span></div>
       <div style="padding:14px">
-        <canvas id="pnl-chart" height="160"></canvas>
+        <div class="chart-wrap chart-wrap-md">
+          <canvas id="pnl-chart"></canvas>
+        </div>
       </div>
     </div>
   </div>

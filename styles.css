@@ -301,6 +301,19 @@ body { display:flex; flex-direction:column; }
   border-bottom:1px solid var(--border);
   position:relative;
 }
+.chart-wrap {
+  position: relative;
+  width: 100%;
+}
+.chart-wrap-lg {
+  height: clamp(200px, 30vh, 380px);
+}
+.chart-wrap-sm {
+  height: clamp(90px, 13vh, 140px);
+}
+.chart-wrap-md {
+  height: clamp(140px, 20vh, 220px);
+}
 .chart-panel canvas { display:block; }
 .chart-panel-title {
   font-family:var(--mono); font-size:9px; color:var(--text3);

@@ -631,7 +631,7 @@ function renderPriceChart(data, coin) {
     type:'line',
     data:{labels,datasets},
     options:{
-      responsive:true, animation:false,
+      responsive:true, maintainAspectRatio:false, animation:false,
       interaction:{mode:'index',intersect:false},
       plugins:{
         legend:{display:false},
@@ -667,7 +667,7 @@ function renderSubCharts(data) {
     makeOrUpdate('vol-chart',{
       type:'bar',
       data:{labels,datasets:[{label:'Volume',data:vols,backgroundColor:prices.map((p,i)=>i>0&&p>=prices[i-1]?'rgba(0,230,118,0.5)':'rgba(255,61,90,0.5)'),borderColor:'transparent'}]},
-      options:{responsive:true,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{position:'right',ticks:{color:'#4a6070',font:{size:9},callback:v=>fmtCap(v)},grid:{color:'rgba(26,42,61,0.3)'}}}}
+      options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{position:'right',ticks:{color:'#4a6070',font:{size:9},callback:v=>fmtCap(v)},grid:{color:'rgba(26,42,61,0.3)'}}}}
     });
   } else { const p=document.getElementById('vol-panel'); if(p) p.style.display='none'; }
 
@@ -682,7 +682,7 @@ function renderSubCharts(data) {
         {label:'OB',data:Array(labels.length).fill(70),borderColor:'rgba(255,61,90,0.4)',borderWidth:1,pointRadius:0,borderDash:[4,4]},
         {label:'OS',data:Array(labels.length).fill(30),borderColor:'rgba(0,230,118,0.4)',borderWidth:1,pointRadius:0,borderDash:[4,4]},
       ]},
-      options:{responsive:true,animation:false,plugins:{legend:{display:false}},scales:{x:{display:false},y:{position:'right',min:0,max:100,ticks:{color:'#4a6070',font:{size:9},stepSize:25},grid:{color:'rgba(26,42,61,0.3)'}}}}
+      options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false}},scales:{x:{display:false},y:{position:'right',min:0,max:100,ticks:{color:'#4a6070',font:{size:9},stepSize:25},grid:{color:'rgba(26,42,61,0.3)'}}}}
     });
   } else { document.getElementById('rsi-panel').style.display='none'; }
 
@@ -698,7 +698,7 @@ function renderSubCharts(data) {
         {label:'MACD',data:m.macdLine,borderColor:'#00d4ff',borderWidth:1.5,pointRadius:0,type:'line',order:1,fill:false,tension:0.3},
         {label:'Signal',data:m.signalLine,borderColor:'#ffab00',borderWidth:1,pointRadius:0,type:'line',order:1,fill:false,tension:0.3},
       ]},
-      options:{responsive:true,animation:false,plugins:{legend:{display:false}},scales:{x:{display:false},y:{position:'right',ticks:{color:'#4a6070',font:{size:9}},grid:{color:'rgba(26,42,61,0.3)'}}}}
+      options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false}},scales:{x:{display:false},y:{position:'right',ticks:{color:'#4a6070',font:{size:9}},grid:{color:'rgba(26,42,61,0.3)'}}}}
     });
   } else { document.getElementById('macd-panel').style.display='none'; }
 }
@@ -790,7 +790,7 @@ function renderRegressionChart(data, analysis, coin) {
       {label:'Bull',data:bullArr,borderColor:'rgba(0,230,118,0.5)',borderWidth:1,pointRadius:0,fill:false,borderDash:[3,3],tension:0.3},
       {label:'Bear',data:bearArr,borderColor:'rgba(255,61,90,0.5)',borderWidth:1,pointRadius:0,fill:false,borderDash:[3,3],tension:0.3},
     ]},
-    options:{responsive:true,animation:false,plugins:{legend:{display:false}},scales:{x:{type:'category',display:true,ticks:{maxRotation:0,maxTicksLimit:8,color:'#4a6070',font:{size:9}},grid:{color:'rgba(26,42,61,0.3)'}},y:{position:'right',ticks:{color:'#4a6070',font:{size:9},callback:v=>fmtPrice(v)},grid:{color:'rgba(26,42,61,0.3)'}}}}
+    options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false}},scales:{x:{type:'category',display:true,ticks:{maxRotation:0,maxTicksLimit:8,color:'#4a6070',font:{size:9}},grid:{color:'rgba(26,42,61,0.3)'}},y:{position:'right',ticks:{color:'#4a6070',font:{size:9},callback:v=>fmtPrice(v)},grid:{color:'rgba(26,42,61,0.3)'}}}}
   });
 }
 
@@ -974,7 +974,7 @@ function renderPnlChart(enriched) {
   makeOrUpdate('pnl-chart',{
     type:'bar',
     data:{labels,datasets:[{label:'P&L %',data,backgroundColor:colors,borderColor:borders,borderWidth:1}]},
-    options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#4a6070',font:{size:9},callback:v=>v.toFixed(1)+'%'},grid:{color:'rgba(26,42,61,0.3)'}},y:{ticks:{color:'#8aabb0',font:{size:9,family:'IBM Plex Mono'}},grid:{display:false}}}}
+    options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#4a6070',font:{size:9},callback:v=>v.toFixed(1)+'%'},grid:{color:'rgba(26,42,61,0.3)'}},y:{ticks:{color:'#8aabb0',font:{size:9,family:'IBM Plex Mono'}},grid:{display:false}}}}
   });
 }
 
